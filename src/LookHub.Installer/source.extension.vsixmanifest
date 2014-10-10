@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="LookHub.Installer.Microsoft.ffe50bfc-70d5-4dd8-a242-26aa21025ae6">
+    <Name>LookHub</Name>
+    <Author>Ziya SARIKAYA</Author>
+    <Version>1.1.1</Version>
+    <Description xml:space="preserve">Show In Github.</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>https://github.com/ziyasal/lookhub</MoreInfoUrl>
+    <License>lgpl.txt</License>
+    <GettingStartedGuide>https://github.com/ziyasal/lookhub/blob/master/README.md</GettingStartedGuide>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="12.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.5" MaxVersion="4.5" />
+  </Identifier>
+  <References />
+  <Content>
+    <VsPackage>|LookHub;PkgdefProjectOutputGroup|</VsPackage>
+  </Content>
+</Vsix>
