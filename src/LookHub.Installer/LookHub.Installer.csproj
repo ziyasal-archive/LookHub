@@ -54,7 +54,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lgpl.txt">
+    <Content Include="mit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
