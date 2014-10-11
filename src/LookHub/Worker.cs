@@ -55,11 +55,11 @@ namespace LookHub
             var doc = _envDte.ActiveDocument;
             var rootProjectItem = _envDte.SelectedItems.OfType<SelectedItem>().First().ProjectItem;
             string fileName = rootProjectItem.Properties.Item("FullPath").Value.ToString();
-            var dir = GetGitDir(fileName);
+            var gitDir = GetGitDir(fileName);
             var file = new GitConfigFile();
-            file.LoadFile(Path.Combine(dir, "config"));
+            file.LoadFile(Path.Combine(gitDir, "config"));
 
-            string head = File.ReadAllText(Path.Combine(dir, "HEAD")).Trim();
+            string head = File.ReadAllText(Path.Combine(gitDir, "HEAD")).Trim();
             string branch;
             string remote = null;
             if (head.StartsWith("ref: refs/heads/"))
@@ -107,11 +107,10 @@ namespace LookHub
             int j = url.IndexOf(host);
             var repo = url.Substring(j + host.Length + 1);
 
-            DirectoryInfo directory = new FileInfo(_envDte.Solution.FullName).Directory;
-
-            if (directory != null)
+            if (gitDir != null)
             {
-                string subdir = fileName.Substring(directory.FullName.Length + 1);
+                gitDir = gitDir.Replace(".git", string.Empty);
+                string subdir = fileName.Substring(gitDir.Length);
                 subdir = subdir.Replace('\\', '/');
 
                 string tline = "0";

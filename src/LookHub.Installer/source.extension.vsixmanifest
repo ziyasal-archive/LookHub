@@ -7,7 +7,7 @@
     <Description xml:space="preserve">Show In Github.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>https://github.com/ziyasal/lookhub</MoreInfoUrl>
-    <License>lgpl.txt</License>
+    <License>mit.txt</License>
     <GettingStartedGuide>https://github.com/ziyasal/lookhub/blob/master/README.md</GettingStartedGuide>
     <SupportedProducts>
       <VisualStudio Version="10.0">

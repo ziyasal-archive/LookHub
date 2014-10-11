@@ -189,6 +189,10 @@
   <ItemGroup>
     <None Include="Resources\loopHub_16.bmp" />
     <Resource Include="Resources\lookHub_copyurl_16.bmp" />
+    <Content Include="mit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\loopHub_200.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
