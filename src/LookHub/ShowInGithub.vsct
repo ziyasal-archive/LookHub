@@ -64,7 +64,7 @@
 
 			<Button guid="guidLookHubCmdSet" id="cmdidShowInGithubCommand" priority="0x0100" type="Button">
 				<Parent guid="guidLookHubCmdSet" id="MyMenuGroup" />
-				<Icon guid="guidLookubImages" id="bmpPic1" />
+				<Icon guid="guidLookubImage" id="bmpShowInGithub" />
 				<Strings>
 					<CommandName>cmdidShowInGithubCommand</CommandName>
 					<ButtonText>Show In Github</ButtonText>
@@ -73,7 +73,7 @@
 
 			<Button guid="guidLookHubCmdSet" id="cmdidCopyGithubLinkCommand" priority="0x0200" type="Button">
 				<Parent guid="guidLookHubCmdSet" id="MyMenuGroup" />
-				<Icon guid="guidImages" id="bmpPic1" />
+				<Icon guid="guidLookubCopyLinkImage" id="bmpCopyGithubLink" />
 				<Strings>
 					<CommandName>cmdidCopyGithubLinkCommand</CommandName>
 					<ButtonText>Copy Github Link</ButtonText>
@@ -90,8 +90,8 @@
             bitmap strip containing the bitmaps and then there are the numeric ids of the elements used 
             inside a button definition. An important aspect of this declaration is that the element id 
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-			<Bitmap guid="guidImages" href="Resources\Images_32bit.bmp" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows" />
-			<Bitmap guid="guidLookubImages" href="Resources\loopHub_16.bmp" usedList="bmpPic1" />
+			<Bitmap guid="guidLookubImage" href="Resources\loopHub_16.bmp" usedList="bmpShowInGithub" />
+			<Bitmap guid="guidLookubCopyLinkImage" href="Resources\lookHub_copyurl_16.bmp" usedList="bmpCopyGithubLink" />
 
 		</Bitmaps>
 
@@ -107,24 +107,17 @@
 
 		<!-- This is the guid used to group the menu commands together -->
 		<GuidSymbol name="guidLookHubCmdSet" value="{9a61784d-d299-43e7-9d11-76fa20bbc532}">
-
 			<IDSymbol name="MyMenuGroup" value="0x1020" />
 			<IDSymbol name="cmdidShowInGithubCommand" value="0x0100" />
 			<IDSymbol name="cmdidCopyGithubLinkCommand" value="0x0101" />
 		</GuidSymbol>
 
-
-		<GuidSymbol name="guidImages" value="{f5ea3021-6b96-4188-959c-9308284840e5}">
-			<IDSymbol name="bmpPic1" value="1" />
-			<IDSymbol name="bmpPic2" value="2" />
-			<IDSymbol name="bmpPicSearch" value="3" />
-			<IDSymbol name="bmpPicX" value="4" />
-			<IDSymbol name="bmpPicArrows" value="5" />
-		</GuidSymbol>
     
-    <GuidSymbol name="guidLookubImages" value="{8091A8B7-F122-4BFC-ADAB-884C36BCCE79}">
-			<IDSymbol name="bmpPic1" value="1" />
+    <GuidSymbol name="guidLookubImage" value="{8091A8B7-F122-4BFC-ADAB-884C36BCCE79}">
+			<IDSymbol name="bmpShowInGithub" value="1" />
+		</GuidSymbol>
+    <GuidSymbol name="guidLookubCopyLinkImage" value="{9602EF6A-3530-44B1-A4DA-995CA9F09758}">
+			<IDSymbol name="bmpCopyGithubLink" value="1" />
 		</GuidSymbol>
 	</Symbols>
-
 </CommandTable>

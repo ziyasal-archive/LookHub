@@ -42,7 +42,7 @@ namespace LookHub
             Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
         }
 
-		/////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////
         // Overriden Package Implementation
         #region Package Members
 
@@ -52,29 +52,29 @@ namespace LookHub
         /// </summary>
         protected override void Initialize()
         {
-            Trace.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
+            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
 
             // Add our command handlers for menu (commands must exist in the .vsct file)
             OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
-            if ( null != mcs )
+            if (null != mcs)
             {
                 // Create the command for the menu item.
                 CommandID showInGithubCommandId = new CommandID(GuidList.guidLookHubCmdSet, (int)PkgCmdIDList.cmdidShowInGithubCommand);
                 MenuCommand showInGithubCommand = new MenuCommand(SowInGithubCallback, showInGithubCommandId);
-                mcs.AddCommand( showInGithubCommand );
+                mcs.AddCommand(showInGithubCommand);
 
-				CommandID copyGithubLinkCommandId = new CommandID(GuidList.guidLookHubCmdSet, (int)PkgCmdIDList.cmdidCopyGithubLinkCommand);
+                CommandID copyGithubLinkCommandId = new CommandID(GuidList.guidLookHubCmdSet, (int)PkgCmdIDList.cmdidCopyGithubLinkCommand);
                 MenuCommand copyGithubLinkCommand = new MenuCommand(CopyGithubLinkCallback, copyGithubLinkCommandId);
-				mcs.AddCommand(copyGithubLinkCommand);
+                mcs.AddCommand(copyGithubLinkCommand);
             }
         }
         #endregion
 
-		private static T GetService<T>() where T : class
-		{
-			return (T) ServiceProvider.GlobalProvider.GetService(typeof(T));
-		}
+        private static T GetService<T>() where T : class
+        {
+            return (T)ServiceProvider.GlobalProvider.GetService(typeof(T));
+        }
 
         /// <summary>
         /// This function is the callback used to execute a command when the a menu item is clicked.
@@ -83,23 +83,23 @@ namespace LookHub
         /// </summary>
         private void SowInGithubCallback(object sender, EventArgs e)
         {
-        	var envDte = GetService<DTE>();
+            var envDte = GetService<DTE>();
             var outWindow = GetService<SVsOutputWindow>();
-        	new CommandHandler(envDte,outWindow).LookHub();
+
+            new Worker(envDte, outWindow).ShowInGithub();
         }
 
 
-		/// <summary>
-		/// This function is the callback used to execute a command when the a menu item is clicked.
-		/// See the Initialize method to see how the menu item is associated to this function using
-		/// the OleMenuCommandService service and the MenuCommand class.
-		/// </summary>
-		private void CopyGithubLinkCallback(object sender, EventArgs e)
-		{
-			var envDte = GetService<DTE>();
+        /// <summary>
+        /// This function is the callback used to execute a command when the a menu item is clicked.
+        /// See the Initialize method to see how the menu item is associated to this function using
+        /// the OleMenuCommandService service and the MenuCommand class.
+        /// </summary>
+        private void CopyGithubLinkCallback(object sender, EventArgs e)
+        {
+            var envDte = GetService<DTE>();
             var outWindow = GetService<SVsOutputWindow>();
-            new CommandHandler(envDte, outWindow).CopyGithubLink();
-		}
-
+            new Worker(envDte, outWindow).CopyGithubLink();
+        }
     }
 }

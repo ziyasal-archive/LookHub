@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.Composition;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -10,28 +9,18 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace LookHub
 {
-    public interface ICommandHandler
-    {
-        void LookHub();
-        void CopyGithubLink();
-    }
-
-    [Export(typeof(ICommandHandler))]
-    public class CommandHandler : ICommandHandler
+    public class Worker
     {
         private readonly DTE _envDte;
         private readonly SVsOutputWindow _outWindow;
 
-        [Import]
-        public ILogger Logger { get; set; }
-
-        public CommandHandler(DTE envDte, SVsOutputWindow outWindow)
+        public Worker(DTE envDte, SVsOutputWindow outWindow)
         {
             _envDte = envDte;
             _outWindow = outWindow;
         }
 
-        public void LookHub()
+        public void ShowInGithub()
         {
             var url = GetUrl();
 
@@ -157,8 +146,6 @@ namespace LookHub
                 pane.OutputString(msg);
                 pane.Activate(); // Brings this pane into view
             }
-
-            Logger.Log("ASD");
         }
 
         private static string GetGitDir(string subdir)
