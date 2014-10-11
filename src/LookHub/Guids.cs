@@ -11,5 +11,5 @@ namespace LookHub
         public const string guidLookHubCmdSetString = "9a61784d-d299-43e7-9d11-76fa20bbc532";
 
         public static readonly Guid guidLookHubCmdSet = new Guid(guidLookHubCmdSetString);
-    };
+    }
 }

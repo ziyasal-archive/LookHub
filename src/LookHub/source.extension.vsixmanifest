@@ -5,6 +5,8 @@
     <Author>Ziya SARIKAYA</Author>
     <Version>1.1.0.0</Version>
     <Description xml:space="preserve">Show In Github.</Description>
+    <Icon>Resources\loopHub_32.png</Icon>
+    <PreviewImage>Resources\loopHub_200.png</PreviewImage>
     <Locale>1033</Locale>
     <InstalledByMsi>false</InstalledByMsi>
     <SupportedProducts>
