@@ -1,7 +1,7 @@
+![Show In Github](assets/loopHub_200.png?raw=true "LookHub")
+
 LookHub
 =======
-
-![Show In Github](assets/loopHub_200.png?raw=true "LookHub")
 
 This is an add-in for Visual Studio that adds a new **Show in Github** and **Copy Github Link** commands to the context menu of the text editor.
 
