@@ -4,7 +4,7 @@
   <Identifier Id="34cbc46c-355b-4fb7-98cb-75d76a6983d7">
     <Name>LookHub</Name>
     <Author>Ziya SARIKAYA</Author>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Description xml:space="preserve">Show In Github.</Description>
     <Icon>Resources\loopHub_32.png</Icon>
     <PreviewImage>Resources\loopHub_200.png</PreviewImage>
